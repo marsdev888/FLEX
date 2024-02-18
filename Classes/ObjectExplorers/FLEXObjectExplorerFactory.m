@@ -228,6 +228,7 @@ static NSMutableDictionary<id<NSCopying>, Class> *classesToRegisteredSections = 
         case FLEXGlobalsRowPushNotifications:
         case FLEXGlobalsRowBrowseBundle:
         case FLEXGlobalsRowBrowseContainer:
+        case FLEXGlobalsRowBrowseSharedContainer:
         case FLEXGlobalsRowCount:
             return nil;
     }

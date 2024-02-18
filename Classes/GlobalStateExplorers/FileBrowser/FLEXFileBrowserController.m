@@ -131,6 +131,7 @@ typedef NS_ENUM(NSUInteger, FLEXFileBrowserSortAttribute) {
     switch (row) {
         case FLEXGlobalsRowBrowseBundle: return @"📁  Browse Bundle Directory";
         case FLEXGlobalsRowBrowseContainer: return @"📁  Browse Container Directory";
+        case FLEXGlobalsRowBrowseSharedContainer: return @"📁  Browse Shared Container Directory";
         default: return nil;
     }
 }
@@ -139,6 +140,10 @@ typedef NS_ENUM(NSUInteger, FLEXFileBrowserSortAttribute) {
     switch (row) {
         case FLEXGlobalsRowBrowseBundle: return [[self alloc] initWithPath:NSBundle.mainBundle.bundlePath];
         case FLEXGlobalsRowBrowseContainer: return [[self alloc] initWithPath:NSHomeDirectory()];
+        case FLEXGlobalsRowBrowseSharedContainer: {
+            NSString *sharedPath = [NSString stringWithFormat:@"group.%@", NSBundle.mainBundle.bundleIdentifier];
+            return [[self alloc] initWithPath:sharedPath];
+        }
         default: return [self new];
     }
 }

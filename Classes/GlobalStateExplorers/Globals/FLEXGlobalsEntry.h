@@ -26,6 +26,7 @@ typedef NS_ENUM(NSUInteger, FLEXGlobalsRow) {
     FLEXGlobalsRowMainBundle,
     FLEXGlobalsRowBrowseBundle,
     FLEXGlobalsRowBrowseContainer,
+    FLEXGlobalsRowBrowseSharedContainer,
     FLEXGlobalsRowApplication,
     FLEXGlobalsRowKeyWindow,
     FLEXGlobalsRowMainScreen,

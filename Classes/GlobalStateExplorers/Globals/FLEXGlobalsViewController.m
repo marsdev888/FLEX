@@ -70,6 +70,7 @@
             return [FLEXCookiesViewController flex_concreteGlobalsEntry:row];
         case FLEXGlobalsRowBrowseBundle:
         case FLEXGlobalsRowBrowseContainer:
+        case FLEXGlobalsRowBrowseSharedContainer:
             return [FLEXFileBrowserController flex_concreteGlobalsEntry:row];
         case FLEXGlobalsRowSystemLog:
             return [FLEXSystemLogViewController flex_concreteGlobalsEntry:row];
@@ -123,6 +124,7 @@
             @(FLEXGlobalsSectionAppShortcuts) : @[
                 [self globalsEntryForRow:FLEXGlobalsRowBrowseBundle],
                 [self globalsEntryForRow:FLEXGlobalsRowBrowseContainer],
+                [self globalsEntryForRow:FLEXGlobalsRowBrowseSharedContainer],
                 [self globalsEntryForRow:FLEXGlobalsRowMainBundle],
                 [self globalsEntryForRow:FLEXGlobalsRowUserDefaults],
                 [self globalsEntryForRow:FLEXGlobalsRowAppKeychainItems],
