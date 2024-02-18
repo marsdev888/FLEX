@@ -141,7 +141,8 @@ typedef NS_ENUM(NSUInteger, FLEXFileBrowserSortAttribute) {
         case FLEXGlobalsRowBrowseBundle: return [[self alloc] initWithPath:NSBundle.mainBundle.bundlePath];
         case FLEXGlobalsRowBrowseContainer: return [[self alloc] initWithPath:NSHomeDirectory()];
         case FLEXGlobalsRowBrowseSharedContainer: {
-            NSString *sharedPath = [NSString stringWithFormat:@"group.%@", NSBundle.mainBundle.bundleIdentifier];
+            NSString *applicationGroupIdentifier = [NSString stringWithFormat:@"group.%@", NSBundle.mainBundle.bundleIdentifier];
+            NSString *sharedPath = [NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:applicationGroupIdentifier].path;
             return [[self alloc] initWithPath:sharedPath];
         }
         default: return [self new];
